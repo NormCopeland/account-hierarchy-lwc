@@ -1,0 +1,45 @@
+<template>
+    <li class="slds-item">
+        <div class="hierarchy-row slds-grid slds-grid_vertical-align-center">
+            <!-- Expand/Collapse Button -->
+            <template if:true={hasChildAccounts}>
+                <lightning-button-icon
+                    icon-name={toggleIcon}
+                    variant="bare"
+                    size="small"
+                    onclick={toggleChildren}
+                    class="slds-m-right_x-small"
+                    title="Toggle children">
+                </lightning-button-icon>
+            </template>
+            <!-- Indent Space for Items Without Children -->
+            <template if:false={hasChildAccounts}>
+                <div class="slds-m-right_large"></div>
+            </template>
+            
+            <!-- Account Name -->
+            <div class={accountClass}>
+                <a href="javascript:void(0);" onclick={handleClick} class="account-link">
+                    {account.Name}
+                </a>
+                <template if:true={isCurrentAccount}>
+                    <span class="slds-badge slds-theme_success slds-m-left_small">Current Account</span>
+                </template>
+            </div>
+        </div>
+        
+        <!-- Child Accounts -->
+        <template if:true={hasChildAccounts}>
+            <ul class="slds-is-expanded slds-m-left_large" if:true={showChildren}>
+                <template for:each={account.childAccounts} for:item="child">
+                    <c-account-hierarchy-item
+                        key={child.Id}
+                        account={child}
+                        current-account-id={currentAccountId}
+                        onaccountclick={handleChildClick}>
+                    </c-account-hierarchy-item>
+                </template>
+            </ul>
+        </template>
+    </li>
+</template>

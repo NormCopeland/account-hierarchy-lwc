@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-card">
+        <div class="slds-card__body slds-card__body_inner">
+            <template if:true={hierarchyData}>
+                <div class="slds-text-heading_small slds-m-bottom_small">Account Hierarchy</div>
+                <ul class="slds-has-dividers_bottom">
+                    <c-account-hierarchy-item
+                        account={hierarchyData}
+                        current-account-id={recordId}
+                        onaccountclick={handleAccountClick}>
+                    </c-account-hierarchy-item>
+                </ul>
+            </template>
+        </div>
+    </div>
+</template>

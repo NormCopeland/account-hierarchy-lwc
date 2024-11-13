@@ -1,0 +1,32 @@
+.slds-item {
+    padding: 0.25rem 0;
+}
+
+.account-link {
+    color: rgb(1, 118, 211);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.account-link:hover {
+    text-decoration: underline;
+}
+
+.current-account {
+    font-weight: 600;
+}
+
+.slds-badge {
+    font-size: 0.75rem;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.hierarchy-row {
+    background-color: white;
+    padding: 0.25rem 0.5rem;
+}
+
+.hierarchy-row:hover {
+    background-color: #f3f2f2;
+}
