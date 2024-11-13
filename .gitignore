@@ -1,0 +1,7 @@
+# Salesforce DX specific
+.sfdx/
+.sf/
+
+# Other Salesforce-related files to ignore
+.localdevserver/
+deploy-options.json
