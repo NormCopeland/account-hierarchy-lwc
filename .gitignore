@@ -5,3 +5,10 @@
 # Other Salesforce-related files to ignore
 .localdevserver/
 deploy-options.json
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
